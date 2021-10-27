@@ -1,6 +1,6 @@
 # Steps
 
-This application counts your steps based on accelerometer data and calculates travelled distance based on computed stride using the user's demographic information. Inspired by [Counting Steps by Capturing Acceleration Data from Your Mobile Device](https://www.mathworks.com/help/matlabmobile_android/ug/counting-steps-by-capturing-acceleration-data.html) and [sensorsstatus](https://open-store.io/app/sensorsstatus.chrisclime).
+This application counts steps based on accelerometer data and calculates travelled distance based on computed stride using the user's demographic information. Inspired by [Counting Steps by Capturing Acceleration Data from Your Mobile Device](https://www.mathworks.com/help/matlabmobile_android/ug/counting-steps-by-capturing-acceleration-data.html) and [sensorsstatus](https://open-store.io/app/sensorsstatus.chrisclime).
 
 
 ## How it works
