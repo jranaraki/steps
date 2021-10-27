@@ -11,6 +11,14 @@ When a new accelerometer datapoint becomes available, it is fed into `calMag` fu
 
 The app has been tested on Nexus 6P and Pixel 3A. 
 
+## Limitation
+
+The device should be in the pocket
+
+## Download
+
+[![OpenStore](https://open-store.io/badges/en_US.svg)](https://open-store.io/app/steps.jranaraki)
+
 ## License
 
 Copyright (C) 2021  Javad Rahimipour Anaraki
