@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the steps.jranaraki package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: steps.jranaraki\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-27 03:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../qml/About.qml:24 ../qml/MainPage.qml:52
+msgid "About"
+msgstr ""
+
+#: ../qml/About.qml:48 ../qml/MainPage.qml:43 steps.desktop.in.h:1
+msgid "Steps"
+msgstr ""
+
+#: ../qml/About.qml:66
+msgid "Version: "
+msgstr ""
+
+#: ../qml/About.qml:74
+msgid ""
+"This application counts your steps based on accelerometer data and "
+"calculates travelled distance based on computed stride using the user's "
+"demographic information."
+msgstr ""
+
+#. TRANSLATORS: Please make sure the URLs are correct
+#: ../qml/About.qml:83
+msgid ""
+"This program is free software: you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation, either version 3 of the License, or (at your option) "
+"any later version. This program is distributed in the hope that it will be "
+"useful, but WITHOUT ANY WARRANTY; without even the implied warranty of "
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the <a "
+"href='https://www.gnu.org/licenses/gpl-3.0.en.html'>GNU General Public "
+"License</a> for more details."
+msgstr ""
+
+#: ../qml/About.qml:92
+msgid "DONATE"
+msgstr ""
+
+#: ../qml/About.qml:92
+msgid "ISSUES"
+msgstr ""
+
+#: ../qml/About.qml:92
+msgid "SOURCE"
+msgstr ""
+
+#: ../qml/About.qml:102
+msgid "Copyright"
+msgstr ""
+
+#: ../qml/MainPage.qml:47 ../qml/Setting.qml:32
+msgid "Settings"
+msgstr ""
+
+#: ../qml/Setting.qml:36
+msgid "Cancel"
+msgstr ""
+
+#: ../qml/Setting.qml:45
+msgid "Apply"
+msgstr ""
+
+#: ../qml/Setting.qml:68
+msgid "Sex"
+msgstr ""
+
+#: ../qml/Setting.qml:105
+msgid "Age"
+msgstr ""
+
+#: ../qml/Setting.qml:129
+msgid "Height (cm)"
+msgstr ""
+
+#: ../qml/Setting.qml:152
+msgid "Weight (kg)"
+msgstr ""

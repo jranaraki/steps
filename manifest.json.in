@@ -1,0 +1,15 @@
+{
+    "name": "steps.jranaraki",
+    "description": "An app to calculate the numbesteps and energy epxpenditure based on accelerometer data",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Steps",
+    "hooks": {
+        "steps": {
+            "apparmor": "steps.apparmor",
+            "desktop":  "steps.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "Javad Rahimipour Anaraki <jrahimipour@protonmail.com>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}
