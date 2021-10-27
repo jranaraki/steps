@@ -4,7 +4,7 @@ This application counts your steps based on accelerometer data and calculates tr
 
 ## How it works
 
-When a new accelerometer datapoint becomes available, it is fed into `calMag` function to calculate magnitude. Then, every one second, if at least 60 magnitude values are accumulated, the process of counting steps starts. First, the average of the collected magnitudes is calculated and subtracted from each point. Then, the resulting values are compared with a constant value of eight, approximating the standard deviation of magnitude when walking. However, to have a more reliable result, an algorithm is required to detect walking and then calculate the standard deviation of the collected magnitudes over time.
+When a new accelerometer datapoint becomes available, it is fed into `calMag` function to calculate magnitude. Then, every one second, if at least 60 magnitude values are accumulated, the process of counting steps starts by calling `countSteps`. First, the average of the collected magnitudes is calculated and subtracted from each point. Then, the resulting values are compared with a constant value of eight, approximating the standard deviation of magnitude when walking. However, to have a more reliable result, an algorithm is required to detect walking and then calculate the standard deviation of the collected magnitudes over time.
 
 ## Test cases
 
