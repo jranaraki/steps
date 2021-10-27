@@ -17,7 +17,7 @@ The device should be in the pocket
 
 ## Download
 
-[![OpenStore](https://open-store.io/badges/en_US.svg)](https://open-store.io/app/steps.jranaraki)
+[![OpenStore](https://open-store.io/badges/en_US.svg width="200"/)](https://open-store.io/app/steps.jranaraki)
 
 ## License
 
