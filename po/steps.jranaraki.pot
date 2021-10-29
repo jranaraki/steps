@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: steps.jranaraki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-27 03:11+0000\n"
+"POT-Creation-Date: 2021-10-29 02:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: ../qml/MainPage.qml:47 ../qml/Setting.qml:32
+#: ../qml/MainPage.qml:47 ../qml/Setting.qml:33
 msgid "Settings"
 msgstr ""
 
@@ -77,18 +77,18 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: ../qml/Setting.qml:68
+#: ../qml/Setting.qml:67
 msgid "Sex"
 msgstr ""
 
-#: ../qml/Setting.qml:105
+#: ../qml/Setting.qml:103
 msgid "Age"
 msgstr ""
 
-#: ../qml/Setting.qml:129
+#: ../qml/Setting.qml:122
 msgid "Height (cm)"
 msgstr ""
 
-#: ../qml/Setting.qml:152
+#: ../qml/Setting.qml:141
 msgid "Weight (kg)"
 msgstr ""
