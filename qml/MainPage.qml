@@ -28,12 +28,10 @@ Page {
 
   property var nSteps: 0
   property var distance: 0
-  property var stride: 0
   property var freq: 60
   property var magTemp: []
   property var magData: []
   property var line: []
-  property var stdMag: 8
   property var listIndex: 0
   property var today: ""
   property var pace: 0.0
@@ -62,13 +60,6 @@ Page {
     var d = new Date()
     today = d.toDateString()
     var found = StepsDB.findStep(today)
-
-    //Calculate stride in cm based on demoraphic informatio
-    if (preferences.sex == "Male") {
-      stride = preferences.heightValue * 0.3937008 * 0.415
-    } else {
-      stride = preferences.heightValue * 0.3937008 * 0.413
-    }
 
     //Retreiving data from the dataset and sorting the rows
     listModel.clear()
@@ -130,9 +121,9 @@ Page {
     }
 
     for (var i = 0; i < magNoG.length - 1; i++){
-      if ((magNoG[i] - magNoG[i+1]) > stdMag) {
+      if ((magNoG[i] - magNoG[i+1]) > (11 - preferences.sensitivityValue)) {
         nSteps = nSteps + 1
-        distance = Math.round(nSteps * stride) / 100
+        distance = Math.round(nSteps * preferences.strideValue) / 100
         tmpSteps = tmpSteps + 1
         listModel.setProperty(listIndex, "steps", nSteps)
         listModel.setProperty(listIndex, "distance", distance)

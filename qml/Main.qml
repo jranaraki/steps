@@ -35,8 +35,10 @@ MainView {
     id: preferences
     property string sex: "Male"
     property int age: 30
-    property int heightValue: 160
-    property int weightValue: 75
+    property double heightValue: 160.00
+    property double weightValue: 75.00
+    property double strideValue: 30.00
+    property int sensitivityValue: 8
     property int commonMargin: units.gu(2)
   }
 
@@ -50,6 +52,8 @@ MainView {
       age: preferences.age,
       heightValue: preferences.heightValue,
       weightValue: preferences.weightValue,
+      strideValue: preferences.strideValue,
+      sensitivityValue: preferences.sensitivityValue,
     }
 
     var slot_applyChanges = function(msettings) {
@@ -57,6 +61,8 @@ MainView {
       preferences.age = msettings.age;
       preferences.heightValue = msettings.heightValue;
       preferences.weightValue = msettings.weightValue;
+      preferences.strideValue = msettings.strideValue;
+      preferences.sensitivityValue = msettings.sensitivityValue;
     }
 
     var settingPage = pStack.push(Qt.resolvedUrl("Setting.qml"), prop);
