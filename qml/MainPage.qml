@@ -172,6 +172,18 @@ Page {
         title.text: date
         subtitle.text: "Steps: " + steps + " Distance: " + distance + " m"
       }
+
+      leadingActions: ListItemActions {
+        actions: [
+        Action {
+          iconName: "delete"
+          onTriggered: {
+            StepsDB.deleteSteps(listModel.get(index).date)
+            listModel.remove(index)
+          }
+        }
+        ]
+      }
     }
   }
 
