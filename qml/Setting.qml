@@ -108,7 +108,7 @@ Page {
         }
       }
 
-      TextInput {
+      TextField {
         id:ageText
         width: parent.width
         anchors {
@@ -129,9 +129,7 @@ Page {
         }
       }
 
-      signal editingFinished()
-
-      TextInput {
+      TextField {
         id: heightText
         width: parent.width
         anchors {
@@ -139,7 +137,7 @@ Page {
         }
         validator: DoubleValidator{bottom: 1.00; decimals: 2;}
         focus: true
-        onEditingFinished: calStride()
+        onTextChanged: calStride()
       }
     }
 
@@ -153,7 +151,7 @@ Page {
         }
       }
 
-      TextInput {
+      TextField {
         id:weightText
         width: parent.width
         anchors {
@@ -174,7 +172,7 @@ Page {
         }
       }
 
-      TextInput {
+      TextField {
         id: strideText
         width: parent.width
         anchors {
