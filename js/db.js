@@ -66,6 +66,6 @@ function deleteSteps(id){
     console.log("Deleting register id: " + id);
     var db = openDB();
     db.transaction(function(tx){
-        tx.executeSql('DELETE FROM storedsteps WHERE date=?;', [id]);
+        tx.executeSql('DELETE FROM storedsteps WHERE identifier=?;', [id]);
     });
 }
