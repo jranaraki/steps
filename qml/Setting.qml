@@ -26,6 +26,7 @@ Page {
   property alias weightValue: weightText.text
   property alias strideValue: strideText.text
   property alias sensitivityValue: sensitivitySlider.value
+  property alias goalValue: goalText.text
   property int mSpacing: units.gu(1)
 
   signal applyChanges
@@ -203,6 +204,27 @@ Page {
         function formatValue(val) {
           return val.toFixed(1)
         }
+      }
+    }
+
+    ListItem {
+      height: goallabel.height + goalText.height + 3 * mSpacing
+      Label {
+        id: goallabel
+        text: i18n.tr("Goal (steps)")
+        anchors {
+          top: parent.top; topMargin: mSpacing
+        }
+      }
+
+      TextField {
+        id: goalText
+        width: parent.width
+        anchors {
+          top: goallabel.bottom; topMargin: mSpacing
+        }
+        validator: IntValidator{bottom: 1;}
+        focus: true
       }
     }
   }

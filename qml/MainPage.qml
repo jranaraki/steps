@@ -165,16 +165,24 @@ Page {
       ListItemLayout {
         ProportionalShape {
           SlotsLayout.position: SlotsLayout.Leading
-          source: Image { source: "../Images/Walk.svg" }
+          source: Image { source: "../Images/walk.svg" }
           height: del.height-units.gu(2)
           aspect: UbuntuShape.DropShadow
         }
         title.text: date
-        subtitle.text: "Steps: " + steps + " Distance: " + distance + " m"
+        subtitle.text: "Steps: " + steps + " Distance: " + distance + " m" + " "
+        ProportionalShape {
+          SlotsLayout.position: SlotsLayout.Trailing
+          source: Image { source: "../Images/trophy.svg" }
+          height: del.height-units.gu(2)
+          aspect: UbuntuShape.DropShadow
+          visible: steps >= preferences.goalValue ? true : false
+        }
       }
     }
   }
 
+  //Timer to trigger countSteps
   Timer {
     interval: 1000
     running: true

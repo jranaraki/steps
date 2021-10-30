@@ -39,6 +39,7 @@ MainView {
     property double weightValue: 75.0
     property double strideValue: 30.0
     property double sensitivityValue: 8.0
+    property int goalValue: 10000
     property int commonMargin: units.gu(2)
   }
 
@@ -54,6 +55,7 @@ MainView {
       weightValue: preferences.weightValue,
       strideValue: preferences.strideValue,
       sensitivityValue: preferences.sensitivityValue,
+      goalValue: preferences.goalValue,
     }
 
     var slot_applyChanges = function(msettings) {
@@ -63,6 +65,7 @@ MainView {
       preferences.weightValue = msettings.weightValue;
       preferences.strideValue = msettings.strideValue;
       preferences.sensitivityValue = msettings.sensitivityValue;
+      preferences.goalValue = msettings.goalValue;
     }
 
     var settingPage = pStack.push(Qt.resolvedUrl("Setting.qml"), prop);
