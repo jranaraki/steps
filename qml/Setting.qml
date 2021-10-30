@@ -193,11 +193,15 @@ Page {
 
       Slider {
         id: sensitivitySlider
-        minimumValue: 1
-        maximumValue: 10
+        minimumValue: 1.0
+        maximumValue: 10.0
+        live: true
         width: parent.width
         anchors {
           top: sensitivitylabel.bottom; topMargin: mSpacing
+        }
+        function formatValue(val) {
+          return val.toFixed(1)
         }
       }
     }

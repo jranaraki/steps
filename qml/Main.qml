@@ -35,10 +35,10 @@ MainView {
     id: preferences
     property string sex: "Male"
     property int age: 30
-    property double heightValue: 160.00
-    property double weightValue: 75.00
-    property double strideValue: 30.00
-    property int sensitivityValue: 8
+    property double heightValue: 160.0
+    property double weightValue: 75.0
+    property double strideValue: 30.0
+    property double sensitivityValue: 8.0
     property int commonMargin: units.gu(2)
   }
 
