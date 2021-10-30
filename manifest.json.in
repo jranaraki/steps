@@ -1,6 +1,6 @@
 {
     "name": "steps.jranaraki",
-    "description": "An app to calculate the numbesteps and energy epxpenditure based on accelerometer data",
+    "description": "This application counts steps based on accelerometer data and calculates travelled distance based on computed stride using the user's demographic information",
     "architecture": "@CLICK_ARCH@",
     "title": "Steps",
     "hooks": {
@@ -9,7 +9,7 @@
             "desktop":  "steps.desktop"
         }
     },
-    "version": "1.0.4",
+    "version": "1.0.5",
     "maintainer": "Javad Rahimipour Anaraki <jrahimipour@protonmail.com>",
     "framework" : "@CLICK_FRAMEWORK@"
 }
