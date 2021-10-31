@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: steps.jranaraki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-31 21:49+0000\n"
-"PO-Revision-Date: 2021-10-31 22:49+0100\n"
+"POT-Creation-Date: 2021-10-31 22:11+0000\n"
+"PO-Revision-Date: 2021-10-31 23:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -106,9 +106,13 @@ msgstr "Geschlecht"
 msgid "Female"
 msgstr "Weiblich"
 
-#: ../qml/Setting.qml:88
+#: ../qml/Setting.qml:88 ../qml/Setting.qml:241
 msgid "Male"
 msgstr "Männlich"
+
+#: ../qml/Setting.qml:88 ../qml/Setting.qml:243
+msgid "Other"
+msgstr "Anderes"
 
 #: ../qml/Setting.qml:108
 msgid "Age"
