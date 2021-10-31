@@ -286,7 +286,7 @@ Page {
 
   //Calculate stride in cm based on demoraphic information
   function calStride() {
-    if (sexValue.text == "Male") {
+    if (sexValue.text == i18n.tr("Male")) {
       strideText.text = Math.round(heightText.text * 0.3937008 * 0.415 * 100) / 100
     } else {
       strideText.text = Math.round(heightText.text * 0.3937008 * 0.413 * 100) / 100
