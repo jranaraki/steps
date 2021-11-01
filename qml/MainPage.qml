@@ -170,7 +170,8 @@ Page {
           aspect: UbuntuShape.DropShadow
         }
         title.text: date
-        subtitle.text: "Steps: " + steps + " Distance: " + distance + " m" + " "
+        subtitle.text: i18n.tr("Steps: %1").arg(steps.toLocaleString(Qt.locale(),"f",0)) + " " + i18n.tr("Distance: %1 m").arg(distance.toLocaleString(Qt.locale(),"f",1))
+
         ProportionalShape {
           SlotsLayout.position: SlotsLayout.Trailing
           source: Image { source: "../Images/trophy.svg" }
