@@ -179,8 +179,9 @@ Page {
           aspect: UbuntuShape.DropShadow
           visible: steps >= preferences.goalValue ? true : false
         }
-        
-        leadingActions: ListItemActions {
+      }
+
+      leadingActions: ListItemActions {
         actions: [
         Action {
           iconName: "delete"
