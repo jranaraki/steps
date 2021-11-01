@@ -1,5 +1,5 @@
 # Steps
-This application counts steps based on accelerometer data and calculates travelled distance based on computed stride [1-2] using the user's demographic information. Inspired by [Counting Steps by Capturing Acceleration Data from Your Mobile Device](https://www.mathworks.com/help/matlabmobile_android/ug/counting-steps-by-capturing-acceleration-data.html) and [sensorsstatus](https://open-store.io/app/sensorsstatus.chrisclime).
+This application counts steps based on accelerometer data and calculates travelled distance based on computed stride [1-2] using the user's demographic information. Inspired by [3] and [4].
 
 ## How it works
 When a new accelerometer datapoint becomes available, it is fed into `calMag` function to calculate magnitude. Then, every one second, if at least 60 magnitude values are accumulated, the process of counting steps starts by calling `countSteps`. First, the average of the collected magnitudes is calculated and subtracted from each point. Then, the resulting values are compared with a constant value of eight, approximating the standard deviation of magnitude when walking. However, to have a more reliable result, an algorithm is required to detect walking and then calculate the standard deviation of the collected magnitudes over time.
@@ -9,6 +9,9 @@ When a new accelerometer datapoint becomes available, it is fed into `calMag` fu
 
 [2] Barreira, T. V., Rowe, D., & Kang, M. (2010). Parameters of walking and jogging in healthy young adults. International Journal of Exercise Science, 3(1), 4-13
 
+[3] Counting Steps by Capturing Acceleration Data from Your Mobile Device - MATLAB &amp; Simulink. Retrieved October 20, 2021, from https://www.mathworks.com/help/matlabmobile_android/ug/counting-steps-by-capturing-acceleration-data.html. 
+
+[4] Clime, C. sensorsstatus. OpenStore. Retrieved October 20, 2021, from https://open-store.io/app/sensorsstatus.chrisclime. 
 
 ## Notes
 For the app to work correctly, the app should be prevented from suspension by following these steps:
