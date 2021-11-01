@@ -21,7 +21,7 @@ For the app to work correctly, the app should be prevented from suspension by fo
 - Activate "Prevent app suspension"
 
 ## Test cases
-The app has been tested on Nexus 6P, Pixel 3A and Poco F1. 
+The app has been tested on Nexus 6P, Pixel 3A, Poco F1 and PinePhone. 
 
 ## Limitation
 The device should be in the pocket.
