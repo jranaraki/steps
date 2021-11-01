@@ -1,5 +1,5 @@
 # Steps
-This application counts steps based on accelerometer data and calculates travelled distance based on computed stride [1-2] using the user's demographic information. Inspired by [3] and [4].
+This application counts steps based on accelerometer data and calculates travelled distance based on computed stride length [1-2] using the user's demographic information. Inspired by [3] and [4].
 
 ## How it works
 When a new accelerometer datapoint becomes available, it is fed into `calMag` function to calculate magnitude. Then, every one second, if at least 60 magnitude values are accumulated, the process of counting steps starts by calling `countSteps`. First, the average of the collected magnitudes is calculated and subtracted from each point. Then, the resulting values are compared with a constant value of eight, approximating the standard deviation of magnitude when walking. However, to have a more reliable result, an algorithm is required to detect walking and then calculate the standard deviation of the collected magnitudes over time.
