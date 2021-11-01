@@ -65,6 +65,7 @@ Page {
 
     ListItem {
       height: sexLabel.height + sexValue.height + 3 * mSpacing
+      divider.visible: false
       Label {
         id: sexLabel
         text: i18n.tr("Sex")
@@ -101,6 +102,7 @@ Page {
 
     ListItem {
       height: agelabel.height + ageText.height + 3 * mSpacing
+      divider.visible: false
       Label {
         id: agelabel
         text: i18n.tr("Age")
@@ -122,6 +124,7 @@ Page {
 
     ListItem {
       height: heightlabel.height + heightText.height + 3 * mSpacing
+      divider.visible: false
       Label {
         id: heightlabel
         text: i18n.tr("Height (cm)")
@@ -144,6 +147,7 @@ Page {
 
     ListItem {
       height: weightlabel.height + weightText.height + 3 * mSpacing
+      divider.visible: false
       Label {
         id:weightlabel
         text: i18n.tr("Weight (kg)")
@@ -165,6 +169,7 @@ Page {
 
     ListItem {
       height: stridelabel.height + strideText.height + 3 * mSpacing
+      divider.visible: false
       Label {
         id: stridelabel
         text: i18n.tr("Stride (cm)")
@@ -184,6 +189,7 @@ Page {
 
     ListItem {
       height: sensitivitylabel.height + sensitivitySlider.height + 3 * mSpacing
+      divider.visible: false
       Label {
         id: sensitivitylabel
         text: i18n.tr("Sensitivity")
@@ -209,6 +215,7 @@ Page {
 
     ListItem {
       height: goallabel.height + goalText.height + 3 * mSpacing
+      divider.visible: false
       Label {
         id: goallabel
         text: i18n.tr("Goal (steps)")
