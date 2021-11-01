@@ -9,7 +9,7 @@
             "desktop":  "steps.desktop"
         }
     },
-    "version": "1.0.5",
+    "version": "1.0.6",
     "maintainer": "Javad Rahimipour Anaraki <jrahimipour@protonmail.com>",
     "framework" : "@CLICK_FRAMEWORK@"
 }
