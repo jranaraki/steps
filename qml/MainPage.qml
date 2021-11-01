@@ -179,6 +179,17 @@ Page {
           aspect: UbuntuShape.DropShadow
           visible: steps >= preferences.goalValue ? true : false
         }
+        
+        leadingActions: ListItemActions {
+        actions: [
+        Action {
+          iconName: "delete"
+          onTriggered: {
+            StepsDB.deleteSteps(listModel.get(index).date)
+            listModel.remove(index)
+          }
+        }
+        ]
       }
     }
   }
