@@ -71,7 +71,7 @@ Page {
         linkColor: UbuntuColors.orange
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        text: i18n.tr("This application counts your steps based on accelerometer data and calculates travelled distance based on computed stride using the user's demographic information.")
+        text: i18n.tr("This application counts your steps based on accelerometer data and calculates travelled distance based on computed stride length using the user's demographic information.")
       }
 
       Label {
