@@ -9,9 +9,9 @@ When a new accelerometer datapoint becomes available, it is fed into `calMag` fu
 
 [2] Barreira, T. V., Rowe, D., & Kang, M. (2010). Parameters of walking and jogging in healthy young adults. International Journal of Exercise Science, 3(1), 4-13
 
-[3] Counting Steps by Capturing Acceleration Data from Your Mobile Device - MATLAB &amp; Simulink. Retrieved October 20, 2021, from https://www.mathworks.com/help/matlabmobile_android/ug/counting-steps-by-capturing-acceleration-data.html. 
+[3] Counting Steps by Capturing Acceleration Data from Your Mobile Device - MATLAB &amp; Simulink. Retrieved October 20, 2021, from https://www.mathworks.com/help/matlabmobile_android/ug/counting-steps-by-capturing-acceleration-data.html.
 
-[4] Clime, C. sensorsstatus. OpenStore. Retrieved October 20, 2021, from https://open-store.io/app/sensorsstatus.chrisclime. 
+[4] Clime, C. sensorsstatus. OpenStore. Retrieved October 20, 2021, from https://open-store.io/app/sensorsstatus.chrisclime.
 
 ## Notes
 For the app to work correctly, the app should be prevented from suspension by following these steps:
@@ -21,7 +21,7 @@ For the app to work correctly, the app should be prevented from suspension by fo
 - Activate "Prevent app suspension"
 
 ## Test cases
-The app has been tested on Nexus 6P, Pixel 3A, Poco F1 and PinePhone. 
+The app has been tested on Nexus 6P, Pixel 3A, Poco F1, Sony Xperia X and PinePhone. 
 
 ## Limitation
 The device should be in the pocket.
