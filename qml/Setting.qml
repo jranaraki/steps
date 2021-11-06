@@ -193,7 +193,7 @@ Page {
       divider.visible: false
       Label {
         id: sensitivitylabel
-        text: i18n.tr("Sensitivity")
+        text: i18n.tr("Sensitivity (7-12)")
         anchors {
           top: parent.top; topMargin: mSpacing
         }
@@ -204,19 +204,14 @@ Page {
           top: sensitivitylabel.bottom
           topMargin: mSpacing
           left: parent.left
-          leftMargin: mSpacing*2
+          leftMargin: mSpacing
           right: parent.right
-          rightMargin: mSpacing*2
+          rightMargin: mSpacing*3
         }
         Label {
             id: valueLabel
             text: sensitivitySlider.value.toLocaleString(Qt.locale(),"f",2)
             width: units.gu(7)
-        }
-        Label {
-            id: minLabel
-            text: "7"
-            width: units.gu(2)
         }
         QT.Slider {
           id: sensitivitySlider
@@ -227,14 +222,9 @@ Page {
           live: true
           handle.height: units.gu(2)
           handle.width: handle.height
-          width: parent.width - units.gu(11)
+          width: parent.width - units.gu(7)
           anchors.verticalCenter: parent.verticalCenter
           onMoved: console.log("sensitivity: " + sensitivityValue)
-        }
-        Label {
-            id: maxLabel
-            text: "12"
-            width: units.gu(2)
         }
       }
     }
