@@ -213,23 +213,23 @@ Page {
             right: parent.right
             rightMargin: mSpacing
           }
+          Label {
+              id: valueLabel
+              text: sensitivitySlider.value.toLocaleString(Qt.locale(),"f",2)
+              width: units.gu(7)
+              horizontalAlignment: Text.AlignRight
+          }
           QT.Slider {
             id: sensitivitySlider
             from: 7.0
             to: 12.0
-            stepSize: 0.25
+            stepSize: 0.1
             snapMode: Slider.SnapAlways
             live: true
             handle.height: units.gu(2)
             handle.width: handle.height
             width: parent.width - units.gu(7)
             anchors.verticalCenter: parent.verticalCenter
-          }
-          Label {
-              id: valueLabel
-              text: sensitivitySlider.value.toLocaleString(Qt.locale(),"f",2)
-              width: units.gu(7)
-              horizontalAlignment: Text.AlignRight
           }
         }
       }
