@@ -15,6 +15,7 @@
 */
 
 import QtQuick 2.4
+import QtQuick.Controls 2.5 as QT
 import Ubuntu.Components 1.3
 
 Page {
@@ -192,23 +193,38 @@ Page {
       divider.visible: false
       Label {
         id: sensitivitylabel
-        text: i18n.tr("Sensitivity")
+        text: i18n.tr("Sensitivity (7-12)")
         anchors {
           top: parent.top; topMargin: mSpacing
         }
       }
 
-      Slider {
-        id: sensitivitySlider
-        minimumValue: 1.0
-        maximumValue: 10.0
-        live: true
-        width: parent.width
-        anchors {
-          top: sensitivitylabel.bottom; topMargin: mSpacing
+      Row {
+        anchors{
+          top: sensitivitylabel.bottom
+          topMargin: mSpacing
+          left: parent.left
+          leftMargin: mSpacing
+          right: parent.right
+          rightMargin: mSpacing*3
         }
-        function formatValue(val) {
-          return val.toFixed(1)
+        Label {
+            id: valueLabel
+            text: sensitivitySlider.value.toLocaleString(Qt.locale(),"f",2)
+            width: units.gu(7)
+        }
+        QT.Slider {
+          id: sensitivitySlider
+          from: 7.0
+          to: 12.0
+          stepSize: 0.25
+          snapMode: Slider.SnapAlways
+          live: true
+          handle.height: units.gu(2)
+          handle.width: handle.height
+          width: parent.width - units.gu(7)
+          anchors.verticalCenter: parent.verticalCenter
+          onMoved: console.log("sensitivity: " + sensitivityValue)
         }
       }
     }
