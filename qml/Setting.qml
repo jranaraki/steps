@@ -17,6 +17,7 @@
 import QtQuick 2.4
 import QtQuick.Controls 2.5 as QT
 import Ubuntu.Components 1.3
+import QtQuick.Window 2.2  //to read screen orientation
 
 Page {
   id: settingPage
@@ -34,6 +35,7 @@ Page {
   signal cancelChanges
 
   header: PageHeader {
+    id: header
     title: i18n.tr("Settings")
 
     leadingActionBar.actions: Action {
@@ -55,199 +57,236 @@ Page {
     }
   }
 
-  Column {
-    id: column
-    width: parent.width
+  Flickable {
+    id: settingsFlickable
+    clip: true
+    flickableDirection: Flickable.AutoFlickIfNeeded
+
     anchors {
-      top: settingPage.header.bottom;
-      left: parent.left; leftMargin: mSpacing
-      right: parent.right; rightMargin: mSpacing
+        top: header.bottom
+        left: parent.left
+        right: parent.right
+        bottom: parent.bottom
     }
 
-    ListItem {
-      height: sexLabel.height + sexValue.height + 3 * mSpacing
-      divider.visible: false
-      Label {
-        id: sexLabel
-        text: i18n.tr("Sex")
-        width: parent.width
-        anchors {
-          top: parent.top; topMargin: mSpacing
-        }
+    contentHeight: column.height
+
+    Column {
+      id: column
+      width: parent.width
+      anchors {
+        left: parent.left; leftMargin: mSpacing
+        right: parent.right; rightMargin: mSpacing
       }
-
-      ComboButton {
-        id: sexValue
-        expandedHeight: -1
-        width: parent.width
-        anchors {
-          top: sexLabel.bottom; topMargin: mSpacing
+      ListItem {
+        height: sexLabel.height + sexValue.height + 3 * mSpacing
+        divider.visible: false
+        Label {
+          id: sexLabel
+          text: i18n.tr("Sex")
+          width: parent.width
+          anchors {
+            top: parent.top; topMargin: mSpacing
+          }
         }
-
-        Column {
-          Repeater {
-            model: ["Male", "Female"]
-            Button {
-              text: modelData
-              width: parent.width
-              onClicked: {
-                sexValue.text = text;
-                sexValue.expanded = false;
-                calStride()
+        ComboButton {
+          id: sexValue
+          expandedHeight: -1
+          width: parent.width
+          anchors {
+            top: sexLabel.bottom; topMargin: mSpacing
+          }
+          Column {
+            Repeater {
+              model: ["Male", "Female"]
+              Button {
+                text: modelData
+                width: parent.width
+                onClicked: {
+                  sexValue.text = text;
+                  sexValue.expanded = false;
+                  calStride()
+                }
               }
             }
           }
         }
       }
-    }
-
-    ListItem {
-      height: agelabel.height + ageText.height + 3 * mSpacing
-      divider.visible: false
-      Label {
-        id: agelabel
-        text: i18n.tr("Age")
-        anchors {
-          top: parent.top; topMargin: mSpacing
-        }
-      }
-
-      TextField {
-        id:ageText
-        width: parent.width
-        anchors {
-          top: agelabel.bottom; topMargin: mSpacing
-        }
-        validator: IntValidator{bottom: 1;}
-        focus: true
-      }
-    }
-
-    ListItem {
-      height: heightlabel.height + heightText.height + 3 * mSpacing
-      divider.visible: false
-      Label {
-        id: heightlabel
-        text: i18n.tr("Height (cm)")
-        anchors {
-          top: parent.top; topMargin: mSpacing
-        }
-      }
-
-      TextField {
-        id: heightText
-        width: parent.width
-        anchors {
-          top: heightlabel.bottom; topMargin: mSpacing
-        }
-        validator: DoubleValidator{bottom: 1.00; decimals: 2;}
-        focus: true
-        onTextChanged: calStride()
-      }
-    }
-
-    ListItem {
-      height: weightlabel.height + weightText.height + 3 * mSpacing
-      divider.visible: false
-      Label {
-        id:weightlabel
-        text: i18n.tr("Weight (kg)")
-        anchors {
-          top: parent.top; topMargin: mSpacing
-        }
-      }
-
-      TextField {
-        id:weightText
-        width: parent.width
-        anchors {
-          top: weightlabel.bottom; topMargin: mSpacing
-        }
-        validator: DoubleValidator{bottom: 1.00; decimals: 2;}
-        focus: true
-      }
-    }
-
-    ListItem {
-      height: stridelabel.height + strideText.height + 3 * mSpacing
-      divider.visible: false
-      Label {
-        id: stridelabel
-        text: i18n.tr("Stride (cm)")
-        anchors {
-          top: parent.top; topMargin: mSpacing
-        }
-      }
-
-      TextField {
-        id: strideText
-        width: parent.width
-        anchors {
-          top: stridelabel.bottom; topMargin: mSpacing
-        }
-      }
-    }
-
-    ListItem {
-      height: sensitivitylabel.height + sensitivitySlider.height + 3 * mSpacing
-      divider.visible: false
-      Label {
-        id: sensitivitylabel
-        text: i18n.tr("Sensitivity (7-12)")
-        anchors {
-          top: parent.top; topMargin: mSpacing
-        }
-      }
-
-      Row {
-        anchors{
-          top: sensitivitylabel.bottom
-          topMargin: mSpacing
-          left: parent.left
-          leftMargin: mSpacing
-          right: parent.right
-          rightMargin: mSpacing*3
-        }
+      ListItem {
+        id: ageItem
+        height: agelabel.height + ageText.height + 3 * mSpacing
+        divider.visible: false
         Label {
-            id: valueLabel
-            text: sensitivitySlider.value.toLocaleString(Qt.locale(),"f",2)
-            width: units.gu(7)
+          id: agelabel
+          text: i18n.tr("Age")
+          anchors {
+            top: parent.top; topMargin: mSpacing
+          }
         }
-        QT.Slider {
-          id: sensitivitySlider
-          from: 7.0
-          to: 12.0
-          stepSize: 0.25
-          snapMode: Slider.SnapAlways
-          live: true
-          handle.height: units.gu(2)
-          handle.width: handle.height
-          width: parent.width - units.gu(7)
-          anchors.verticalCenter: parent.verticalCenter
-          onMoved: console.log("sensitivity: " + sensitivityValue)
+        TextField {
+          id:ageText
+          width: parent.width
+          anchors {
+            top: agelabel.bottom; topMargin: mSpacing
+          }
+          validator: IntValidator{bottom: 1;}
         }
       }
-    }
-
-    ListItem {
-      height: goallabel.height + goalText.height + 3 * mSpacing
-      divider.visible: false
-      Label {
-        id: goallabel
-        text: i18n.tr("Goal (steps)")
-        anchors {
-          top: parent.top; topMargin: mSpacing
+      ListItem {
+        id: heightItem
+        height: heightlabel.height + heightText.height + 3 * mSpacing
+        divider.visible: false
+        Label {
+          id: heightlabel
+          text: i18n.tr("Height (cm)")
+          anchors {
+            top: parent.top; topMargin: mSpacing
+          }
+        }
+        TextField {
+          id: heightText
+          width: parent.width
+          anchors {
+            top: heightlabel.bottom; topMargin: mSpacing
+          }
+          validator: DoubleValidator{bottom: 1.00; decimals: 2;}
+          onTextChanged: calStride()
         }
       }
-
-      TextField {
-        id: goalText
-        width: parent.width
-        anchors {
-          top: goallabel.bottom; topMargin: mSpacing
+      ListItem {
+        id: weightItem
+        height: weightlabel.height + weightText.height + 3 * mSpacing
+        divider.visible: false
+        Label {
+          id:weightlabel
+          text: i18n.tr("Weight (kg)")
+          anchors {
+            top: parent.top; topMargin: mSpacing
+          }
         }
-        validator: IntValidator{bottom: 1;}
-        focus: true
+        TextField {
+          id:weightText
+          width: parent.width
+          anchors {
+            top: weightlabel.bottom; topMargin: mSpacing
+          }
+          validator: DoubleValidator{bottom: 1.00; decimals: 2;}
+        }
+      }
+      ListItem {
+        id: strideItem
+        height: stridelabel.height + strideText.height + 3 * mSpacing
+        divider.visible: false
+        Label {
+          id: stridelabel
+          text: i18n.tr("Stride (cm)")
+          anchors {
+            top: parent.top; topMargin: mSpacing
+          }
+        }
+        TextField {
+          id: strideText
+          width: parent.width
+          anchors {
+            top: stridelabel.bottom; topMargin: mSpacing
+          }
+          onFocusChanged: waitForKeyboardTimer.start()
+        }
+      }
+      ListItem {
+        id: sensitivityItem
+        height: sensitivitylabel.height + sensitivitySlider.height + 3 * mSpacing
+        divider.visible: false
+        Label {
+          id: sensitivitylabel
+          text: i18n.tr("Sensitivity") + " (7 - 12)"
+          anchors {
+            top: parent.top; topMargin: mSpacing
+          }
+        }
+        Row {
+          anchors{
+            top: sensitivitylabel.bottom
+            topMargin: mSpacing
+            left: parent.left
+            leftMargin: mSpacing
+            right: parent.right
+            rightMargin: mSpacing
+          }
+          QT.Slider {
+            id: sensitivitySlider
+            from: 7.0
+            to: 12.0
+            stepSize: 0.25
+            snapMode: Slider.SnapAlways
+            live: true
+            handle.height: units.gu(2)
+            handle.width: handle.height
+            width: parent.width - units.gu(7)
+            anchors.verticalCenter: parent.verticalCenter
+          }
+          Label {
+              id: valueLabel
+              text: sensitivitySlider.value.toLocaleString(Qt.locale(),"f",2)
+              width: units.gu(7)
+              horizontalAlignment: Text.AlignRight
+          }
+        }
+      }
+      ListItem {
+        id: goalItem
+        height: goallabel.height + goalText.height + 3 * mSpacing
+        divider.visible: false
+        Label {
+          id: goallabel
+          text: i18n.tr("Goal (steps)")
+          anchors {
+            top: parent.top; topMargin: mSpacing
+          }
+        }
+        TextField {
+          id: goalText
+          width: parent.width
+          anchors {
+            top: goallabel.bottom; topMargin: mSpacing
+          }
+          validator: IntValidator{bottom: 1;}
+          onFocusChanged: waitForKeyboardTimer.start()
+        }
+      }
+      Item {
+        id: flickableSizeSpacer
+        height: 0
+      }
+      /*
+      The bottom components are hidden by the OSK when entering the text fields.
+      To avoid this, the flickable's position needs to adjust accordingly.
+      Only when the flickables height is more than the column items cumulated height it can be flicked.
+      To cover this, a spacer item is added at the bottom whichs height is changed on demand.
+
+      The height of the keyboard, as one offset parameter, is not available to read instantly.
+      It does take about 200ms for the OSK to raise. Only then the height can be queried.
+
+      For some reason in landscape there is another offset. This is added as fixed value.
+      */
+      Timer {
+        id: waitForKeyboardTimer
+        interval: 250 //the osk should be fully raised after that time
+        onTriggered: {
+          flickableSizeSpacer.height = settingPage.height
+          var landscapeOffset = Screen.orientation === 2 ? 250 : 0
+          var constOffset = settingsFlickable.contentY + Qt.inputMethod.keyboardRectangle.height + landscapeOffset
+          if (goalText.focus) {
+            var goalOffset = column.height - goalItem.y
+            settingsFlickable.contentY = constOffset - goalOffset
+          } else if (strideText.focus) {
+            var strideOffset = column.height - strideItem.y
+            settingsFlickable.contentY = constOffset - strideOffset
+          } else {
+              flickableSizeSpacer.height = 0
+              settingsFlickable.returnToBounds()
+          }
+        }
       }
     }
   }
