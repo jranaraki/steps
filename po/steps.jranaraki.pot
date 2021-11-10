@@ -92,3 +92,6 @@ msgstr ""
 #: ../qml/Setting.qml:141
 msgid "Weight (kg)"
 msgstr ""
+#: ../qml/Setting.qml:196
+msgid "Sensitivity (7-12)"
+msgstr ""
