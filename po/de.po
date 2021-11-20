@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: steps.jranaraki\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-20 21:31+0000\n"
-"PO-Revision-Date: 2021-11-20 22:32+0100\n"
+"PO-Revision-Date: 2021-11-20 22:39+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -122,17 +122,15 @@ msgstr "Größe (cm)"
 msgid "Weight (kg)"
 msgstr "Gewicht (kg)"
 
-#: ../qml/Setting.qml:175
-msgid "Stride (cm)"
-msgstr "Schrittlänge (cm)"
+#: ../qml/Setting.qml:196
+msgid "Sensitivity (7-12)"
+msgstr "Empfindlichkeit (7-12)"
 
-#: ../qml/Setting.qml:195
-msgid "Sensitivity"
-msgstr "Empfindlichkeit"
+#~ msgid "Stride (cm)"
+#~ msgstr "Schrittlänge (cm)"
 
-#: ../qml/Setting.qml:221
-msgid "Goal (steps)"
-msgstr "Tagesziel (Schritte)"
+#~ msgid "Goal (steps)"
+#~ msgstr "Tagesziel (Schritte)"
 
 #~ msgid "Other"
 #~ msgstr "Anderes"
