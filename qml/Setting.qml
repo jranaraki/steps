@@ -217,7 +217,7 @@ Page {
               id: valueLabel
               text: sensitivitySlider.value.toLocaleString(Qt.locale(),"f",2)
               width: units.gu(7)
-              horizontalAlignment: Text.AlignRight
+              horizontalAlignment: Text.AlignLeft
           }
           QT.Slider {
             id: sensitivitySlider
