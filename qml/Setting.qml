@@ -92,7 +92,7 @@ Page {
 
         Column {
           Repeater {
-            model: [i18n.tr("Male"), i18n.tr("Female"), i18n.tr("Other")]
+            model: [i18n.tr("Male"), i18n.tr("Female")]
             Button {
               text: modelData
               width: parent.width
@@ -210,7 +210,7 @@ Page {
               id: valueLabel
               text: sensitivitySlider.value.toLocaleString(Qt.locale(),"f",2)
               width: units.gu(7)
-              horizontalAlignment: Text.AlignRight
+              horizontalAlignment: Text.AlignLeft
           }
           QT.Slider {
             id: sensitivitySlider
