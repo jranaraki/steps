@@ -89,24 +89,17 @@ Page {
             top: parent.top; topMargin: mSpacing
           }
         }
-        ComboButton {
-          id: sexValue
-          expandedHeight: -1
-          width: parent.width
-          anchors {
-            top: sexLabel.bottom; topMargin: mSpacing
-          }
-          Column {
-            Repeater {
-              model: ["Male", "Female"]
-              Button {
-                text: modelData
-                width: parent.width
-                onClicked: {
-                  sexValue.text = text;
-                  sexValue.expanded = false;
-                  calStride()
-                }
+
+        Column {
+          Repeater {
+            model: [i18n.tr("Male"), i18n.tr("Female")]
+            Button {
+              text: modelData
+              width: parent.width
+              onClicked: {
+                sexValue.text = text;
+                sexValue.expanded = false;
+                calStride()
               }
             }
           }
@@ -293,7 +286,7 @@ Page {
 
   //Calculate stride in cm based on demoraphic information
   function calStride() {
-    if (sexValue.text == "Male") {
+    if (sexValue.text == i18n.tr("Male")) {
       strideText.text = Math.round(heightText.text * 0.3937008 * 0.415 * 100) / 100
     } else {
       strideText.text = Math.round(heightText.text * 0.3937008 * 0.413 * 100) / 100
