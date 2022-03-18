@@ -15,7 +15,7 @@ For the app to work correctly, the app should be prevented from suspension by fo
 The app has been tested on Nexus 6P, Pixel 3A, Poco F1, Sony Xperia X and PinePhone.
 
 ## Limitation
-The device should be in the pocket.
+The device should be in the pocket for the best accuracy.
 
 ## Download
 [![OpenStore](https://open-store.io/badges/en_US.png)](https://open-store.io/app/steps.jranaraki)
