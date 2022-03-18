@@ -25,9 +25,9 @@ The device should be in the pocket.
 
 [2] Barreira, T. V., Rowe, D., & Kang, M. (2010). Parameters of walking and jogging in healthy young adults. International Journal of Exercise Science, 3(1), 4-13
 
-[3] Counting Steps by Capturing Acceleration Data from Your Mobile Device - MATLAB &amp; Simulink. Retrieved October 20, 2021, from https://www.mathworks.com/help/matlabmobile_android/ug/counting-steps-by-capturing-acceleration-data.html.
+[3] Counting Steps by Capturing Acceleration Data from Your Mobile Device - MATLAB &amp; Simulink. Retrieved March 18, 2022, from https://www.mathworks.com/help/matlabmobile_android/ug/counting-steps-by-capturing-acceleration-data.html.
 
-[4] Clime, C. sensorsstatus. OpenStore. Retrieved October 20, 2021, from https://open-store.io/app/sensorsstatus.chrisclime.
+[4] Clime, C. sensorsstatus. OpenStore. Retrieved March 18, 2022, from https://open-store.io/app/sensorsstatus.chrisclime.
 
 ## License
 Copyright (C) 2022  Javad Rahimipour Anaraki
