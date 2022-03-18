@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2021  Javad Rahimipour Anaraki
+* Copyright (C) 2022  Javad Rahimipour Anaraki
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -89,7 +89,7 @@ Page {
         linkColor: UbuntuColors.orange
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        text: "<a href='https://github.com/jranaraki/steps/" + "1.0" + "'>" + i18n.tr("SOURCE") + "</a> | <a href='https://github.com/jranaraki/steps/issues'>" + i18n.tr("ISSUES") + "</a> | <a href='https://paypal.me/jranaraki'>" + i18n.tr("DONATE") + "</a>"
+        text: "<a href='https://github.com/jranaraki/steps/'>" + i18n.tr("SOURCE") + "</a> | <a href='https://github.com/jranaraki/steps/issues'>" + i18n.tr("ISSUES") + "</a> | <a href='https://paypal.me/jranaraki'>" + i18n.tr("DONATE") + "</a>"
         onLinkActivated: Qt.openUrlExternally(link)
       }
 
@@ -99,7 +99,7 @@ Page {
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         style: Font.Bold
-        text: i18n.tr("Copyright") + " (c) 2021 Javad Rahimipour Anaraki <jrahimipour@pm.me>"
+        text: i18n.tr("Copyright") + " (c) 2022 Javad Rahimipour Anaraki <jrahimipour@pm.me>"
       }
     }
   }

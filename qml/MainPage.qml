@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2021  Javad Rahimipour Anaraki
+* Copyright (C) 2022  Javad Rahimipour Anaraki
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -121,7 +121,7 @@ Page {
     }
 
     for (var i = 0; i < magNoG.length - 1; i++){
-      if ((magNoG[i] - magNoG[i+1]) > (11 - preferences.sensitivityValue)) {
+      if ((magNoG[i] - magNoG[i+1]) > (11 - preferences.sensitivityValue + 7.0)) {
         nSteps = nSteps + 1
         distance = Math.round(nSteps * preferences.strideValue) / 100
         tmpSteps = tmpSteps + 1
@@ -170,7 +170,7 @@ Page {
           aspect: UbuntuShape.DropShadow
         }
         title.text: date
-        subtitle.text: i18n.tr("Steps: %1").arg(steps.toLocaleString(Qt.locale(),"f",0)) + " " + i18n.tr("Distance: %1 m").arg(distance.toLocaleString(Qt.locale(),"f",1))
+        subtitle.text: i18n.tr("Steps: %1").arg(steps.toLocaleString(Qt.locale(),"f",0)) + ", " + i18n.tr("Distance: %1 m").arg(distance.toLocaleString(Qt.locale(),"f",1))
 
         ProportionalShape {
           SlotsLayout.position: SlotsLayout.Trailing

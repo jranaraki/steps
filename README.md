@@ -12,7 +12,7 @@ For the app to work correctly, the app should be prevented from suspension by fo
 - Activate "Prevent app suspension"
 
 ## Test cases
-The app has been tested on Nexus 6P, Pixel 3A, Poco F1, Sony Xperia X and PinePhone. 
+The app has been tested on Nexus 6P, Pixel 3A, Poco F1, Sony Xperia X and PinePhone.
 
 ## Limitation
 The device should be in the pocket.
@@ -30,7 +30,7 @@ The device should be in the pocket.
 [4] Clime, C. sensorsstatus. OpenStore. Retrieved October 20, 2021, from https://open-store.io/app/sensorsstatus.chrisclime.
 
 ## License
-Copyright (C) 2021  Javad Rahimipour Anaraki
+Copyright (C) 2022  Javad Rahimipour Anaraki
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License version 3, as published
 by the Free Software Foundation.

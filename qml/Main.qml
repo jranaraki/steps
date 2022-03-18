@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2021  Javad Rahimipour Anaraki
+* Copyright (C) 2022  Javad Rahimipour Anaraki
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ MainView {
     property double heightValue: 160.0
     property double weightValue: 75.0
     property double strideValue: 30.0
-    property double sensitivityValue: 8.0
+    property double sensitivityValue: 1.0
     property int goalValue: 10000
     property int commonMargin: units.gu(2)
   }

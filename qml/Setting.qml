@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2021  Javad Rahimipour Anaraki
+* Copyright (C) 2022  Javad Rahimipour Anaraki
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 import QtQuick 2.4
 import QtQuick.Controls 2.5 as QT
 import Ubuntu.Components 1.3
-import QtQuick.Window 2.2  //to read screen orientation
+import QtQuick.Window 2.2
 
 Page {
   id: settingPage
@@ -63,10 +63,10 @@ Page {
     flickableDirection: Flickable.AutoFlickIfNeeded
 
     anchors {
-        top: header.bottom
-        left: parent.left
-        right: parent.right
-        bottom: parent.bottom
+      top: header.bottom
+      left: parent.left
+      right: parent.right
+      bottom: parent.bottom
     }
 
     contentHeight: column.height
@@ -78,6 +78,7 @@ Page {
         left: parent.left; leftMargin: mSpacing
         right: parent.right; rightMargin: mSpacing
       }
+
       ListItem {
         height: sexLabel.height + sexValue.height + 3 * mSpacing
         divider.visible: false
@@ -89,22 +90,31 @@ Page {
             top: parent.top; topMargin: mSpacing
           }
         }
+        ComboButton {
+          id: sexValue
+          expandedHeight: -1
+          width: parent.width
+          anchors {
+            top: sexLabel.bottom; topMargin: mSpacing
+          }
 
-        Column {
-          Repeater {
-            model: [i18n.tr("Male"), i18n.tr("Female")]
-            Button {
-              text: modelData
-              width: parent.width
-              onClicked: {
-                sexValue.text = text;
-                sexValue.expanded = false;
-                calStride()
+          Column {
+            Repeater {
+              model: [i18n.tr("Male"), i18n.tr("Female")]
+              Button {
+                text: modelData
+                width: parent.width
+                onClicked: {
+                  sexValue.text = text;
+                  sexValue.expanded = false;
+                  calStride()
+                }
               }
             }
           }
         }
       }
+
       ListItem {
         id: ageItem
         height: agelabel.height + ageText.height + 3 * mSpacing
@@ -125,6 +135,7 @@ Page {
           validator: IntValidator{bottom: 1;}
         }
       }
+
       ListItem {
         id: heightItem
         height: heightlabel.height + heightText.height + 3 * mSpacing
@@ -146,6 +157,7 @@ Page {
           onTextChanged: calStride()
         }
       }
+
       ListItem {
         id: weightItem
         height: weightlabel.height + weightText.height + 3 * mSpacing
@@ -166,6 +178,7 @@ Page {
           validator: DoubleValidator{bottom: 1.00; decimals: 2;}
         }
       }
+
       ListItem {
         id: strideItem
         height: stridelabel.height + strideText.height + 3 * mSpacing
@@ -186,13 +199,14 @@ Page {
           onFocusChanged: waitForKeyboardTimer.start()
         }
       }
+
       ListItem {
         id: sensitivityItem
         height: sensitivitylabel.height + sensitivitySlider.height + 3 * mSpacing
         divider.visible: false
         Label {
           id: sensitivitylabel
-          text: i18n.tr("Sensitivity") + " (7 - 12)"
+          text: i18n.tr("Sensitivity")
           anchors {
             top: parent.top; topMargin: mSpacing
           }
@@ -206,26 +220,27 @@ Page {
             right: parent.right
             rightMargin: mSpacing
           }
-          Label {
-              id: valueLabel
-              text: sensitivitySlider.value.toLocaleString(Qt.locale(),"f",2)
-              width: units.gu(7)
-              horizontalAlignment: Text.AlignLeft
-          }
           QT.Slider {
             id: sensitivitySlider
-            from: 7.0
-            to: 12.0
+            from: 0.0
+            to: 5.0
             stepSize: 0.1
-            snapMode: Slider.SnapAlways
             live: true
             handle.height: units.gu(2)
-            handle.width: handle.height
-            width: parent.width - units.gu(7)
+            handle.width: units.gu(2)
+            width: parent.width - valueLabel.width
             anchors.verticalCenter: parent.verticalCenter
+          }
+          Label {
+            id: valueLabel
+            text: sensitivitySlider.value.toLocaleString(Qt.locale(), "f", 2)
+            width: units.gu(4)
+            horizontalAlignment: Text.AlignRight
+            anchors.bottom: sensitivitySlider.verticalCenter
           }
         }
       }
+
       ListItem {
         id: goalItem
         height: goallabel.height + goalText.height + 3 * mSpacing
@@ -247,24 +262,15 @@ Page {
           onFocusChanged: waitForKeyboardTimer.start()
         }
       }
+
       Item {
         id: flickableSizeSpacer
         height: 0
       }
-      /*
-      The bottom components are hidden by the OSK when entering the text fields.
-      To avoid this, the flickable's position needs to adjust accordingly.
-      Only when the flickables height is more than the column items cumulated height it can be flicked.
-      To cover this, a spacer item is added at the bottom whichs height is changed on demand.
 
-      The height of the keyboard, as one offset parameter, is not available to read instantly.
-      It does take about 200ms for the OSK to raise. Only then the height can be queried.
-
-      For some reason in landscape there is another offset. This is added as fixed value.
-      */
       Timer {
         id: waitForKeyboardTimer
-        interval: 250 //the osk should be fully raised after that time
+        interval: 250
         onTriggered: {
           flickableSizeSpacer.height = settingPage.height
           var landscapeOffset = Screen.orientation === 2 ? 250 : 0
@@ -276,8 +282,8 @@ Page {
             var strideOffset = column.height - strideItem.y
             settingsFlickable.contentY = constOffset - strideOffset
           } else {
-              flickableSizeSpacer.height = 0
-              settingsFlickable.returnToBounds()
+            flickableSizeSpacer.height = 0
+            settingsFlickable.returnToBounds()
           }
         }
       }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: steps.jranaraki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-20 21:31+0000\n"
+"POT-Creation-Date: 2022-03-18 04:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,8 +32,8 @@ msgstr ""
 #: ../qml/About.qml:74
 msgid ""
 "This application counts your steps based on accelerometer data and "
-"calculates travelled distance based on computed stride using the user's "
-"demographic information."
+"calculates travelled distance based on computed stride length using the "
+"user's demographic information."
 msgstr ""
 
 #. TRANSLATORS: Please make sure the URLs are correct
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: ../qml/MainPage.qml:45 ../qml/Setting.qml:36
+#: ../qml/MainPage.qml:45 ../qml/Setting.qml:39
 msgid "Settings"
 msgstr ""
 
@@ -77,37 +77,46 @@ msgstr ""
 msgid "Steps: %1"
 msgstr ""
 
-#: ../qml/Setting.qml:39
+#: ../qml/Setting.qml:42
 msgid "Cancel"
 msgstr ""
 
-#: ../qml/Setting.qml:48
+#: ../qml/Setting.qml:51
 msgid "Apply"
 msgstr ""
 
-#: ../qml/Setting.qml:71
+#: ../qml/Setting.qml:87
 msgid "Sex"
 msgstr ""
 
-#: ../qml/Setting.qml:88
+#: ../qml/Setting.qml:103
 msgid "Female"
 msgstr ""
 
-#: ../qml/Setting.qml:88 ../qml/Setting.qml:241
+#: ../qml/Setting.qml:103 ../qml/Setting.qml:295
 msgid "Male"
 msgstr ""
 
-#: ../qml/Setting.qml:108
+#: ../qml/Setting.qml:124
 msgid "Age"
 msgstr ""
 
-#: ../qml/Setting.qml:130
+#: ../qml/Setting.qml:145
 msgid "Height (cm)"
 msgstr ""
 
-#: ../qml/Setting.qml:153
+#: ../qml/Setting.qml:167
 msgid "Weight (kg)"
 msgstr ""
-#: ../qml/Setting.qml:196
-msgid "Sensitivity (7-12)"
+
+#: ../qml/Setting.qml:188
+msgid "Stride (cm)"
+msgstr ""
+
+#: ../qml/Setting.qml:209
+msgid "Sensitivity"
+msgstr ""
+
+#: ../qml/Setting.qml:250
+msgid "Goal (steps)"
 msgstr ""
