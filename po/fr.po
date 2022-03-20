@@ -7,37 +7,35 @@ msgid ""
 msgstr ""
 "Project-Id-Version: steps.jranaraki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-29 02:56+0000\n"
-"PO-Revision-Date: 2021-10-31 19:08+0100\n"
+"POT-Creation-Date: 2022-03-18 04:19+0000\n"
+"PO-Revision-Date: 2022-03-20 16:13+0100\n"
+"Last-Translator: Anne017\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Anne017\n"
-"Language-Team: \n"
 
-#: ../qml/About.qml:24 ../qml/MainPage.qml:52
+#: ../qml/About.qml:24 ../qml/MainPage.qml:50
 msgid "About"
 msgstr "À propos"
 
-#: ../qml/About.qml:48 ../qml/MainPage.qml:43 steps.desktop.in.h:1
+#: ../qml/About.qml:48 ../qml/MainPage.qml:41 steps.desktop.in.h:1
 msgid "Steps"
 msgstr "Pas"
 
 #: ../qml/About.qml:66
-msgid "Version: "
-msgstr "Version :"
+msgid "Version %1"
+msgstr "Version %1"
 
 #: ../qml/About.qml:74
 msgid ""
 "This application counts your steps based on accelerometer data and "
-"calculates travelled distance based on computed stride using the user's "
-"demographic information."
+"calculates travelled distance based on computed stride length using the "
+"user's demographic information."
 msgstr ""
 "Cette application compte vos pas en fonction des données collectées par "
 "l'accéléromètre et détermine les distances parcourues selon la foulée "
-"calculée en utilisant les informations caractéristiques de l'utilisateur/"
-"trice."
+"calculée en utilisant les informations démographiques de l'utilisateur/trice."
 
 #. TRANSLATORS: Please make sure the URLs are correct
 #: ../qml/About.qml:83
@@ -53,13 +51,13 @@ msgid ""
 msgstr ""
 "Ce programme est un logiciel libre : vous pouvez le redistribuer et/ou le "
 "modifier selon les termes de la Licence Publique Générale GNU telle que "
-"publiée par la Foundation pour le Logiciel Libre (Free Software "
-"Foundation), soit la version 3 de la Licence, soit (à votre choix) toute "
-"version ultérieure. Ce programme est distribué dans l'espoir qu'il sera "
-"utile, mais SANS AUCUNE GARANTIE ; sans même la garantie implicite de "
-"COMMERCIALISATION ou d'ADÉQUATION À UN USAGE PARTICULIER.  Voir la <a "
-"href='https://www.gnu.org/licenses/gpl-3.0.fr.html'>Licence Publique "
-"Générale GNU</a> pour plus de détails."
+"publiée par la Foundation pour le Logiciel Libre (Free Software Foundation), "
+"soit la version 3 de la Licence, soit (à votre choix) toute version "
+"ultérieure. Ce programme est distribué dans l'espoir qu'il sera utile, mais "
+"SANS AUCUNE GARANTIE ; sans même la garantie implicite de COMMERCIALISATION "
+"ou d'ADÉQUATION À UN USAGE PARTICULIER.  Voir la <a href='https://www.gnu."
+"org/licenses/gpl-3.0.fr.html'>Licence Publique Générale GNU</a> pour plus de "
+"détails."
 
 #: ../qml/About.qml:92
 msgid "DONATE"
@@ -77,30 +75,58 @@ msgstr "CODE SOURCE"
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../qml/MainPage.qml:47 ../qml/Setting.qml:33
+#: ../qml/MainPage.qml:45 ../qml/Setting.qml:39
 msgid "Settings"
 msgstr "Paramètres"
 
-#: ../qml/Setting.qml:36
+#: ../qml/MainPage.qml:173
+msgid "Distance: %1 m"
+msgstr "Distance : %1 m"
+
+#: ../qml/MainPage.qml:173
+msgid "Steps: %1"
+msgstr "Pas : %1"
+
+#: ../qml/Setting.qml:42
 msgid "Cancel"
 msgstr "Annuler"
 
-#: ../qml/Setting.qml:45
+#: ../qml/Setting.qml:51
 msgid "Apply"
 msgstr "Appliquer"
 
-#: ../qml/Setting.qml:67
+#: ../qml/Setting.qml:87
 msgid "Sex"
 msgstr "Sexe"
 
 #: ../qml/Setting.qml:103
+msgid "Female"
+msgstr "Femme"
+
+#: ../qml/Setting.qml:103 ../qml/Setting.qml:295
+msgid "Male"
+msgstr "Homme"
+
+#: ../qml/Setting.qml:124
 msgid "Age"
 msgstr "Âge"
 
-#: ../qml/Setting.qml:122
+#: ../qml/Setting.qml:145
 msgid "Height (cm)"
 msgstr "Taille (cm)"
 
-#: ../qml/Setting.qml:141
+#: ../qml/Setting.qml:167
 msgid "Weight (kg)"
 msgstr "Poids (kg)"
+
+#: ../qml/Setting.qml:188
+msgid "Stride (cm)"
+msgstr "Foulée (cm)"
+
+#: ../qml/Setting.qml:209
+msgid "Sensitivity"
+msgstr "Sensitivité"
+
+#: ../qml/Setting.qml:250
+msgid "Goal (steps)"
+msgstr "Objectif (pas)"
