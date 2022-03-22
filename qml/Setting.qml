@@ -294,6 +294,8 @@ Page {
   function calStride() {
     if (sexValue.text == i18n.tr("Male")) {
       strideText.text = Math.round(heightText.text * 0.3937008 * 0.415 * 100) / 100
+    } else if (sexValue.text == i18n.tr("Other")) {
+      strideText.text = Math.round(heightText.text * 0.3937008 * 0.414 * 100) / 100
     } else {
       strideText.text = Math.round(heightText.text * 0.3937008 * 0.413 * 100) / 100
     }
