@@ -121,7 +121,7 @@ Page {
     }
 
     for (var i = 0; i < magNoG.length - 1; i++){
-      if ((magNoG[i] - magNoG[i+1]) > (11 - preferences.sensitivityValue + 7.0)) {
+      if ((magNoG[i] - magNoG[i+1]) > (11 - (preferences.sensitivityValue + 7.0))) {
         nSteps = nSteps + 1
         distance = Math.round(nSteps * preferences.strideValue) / 100
         tmpSteps = tmpSteps + 1
