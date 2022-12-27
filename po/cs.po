@@ -102,3 +102,11 @@ msgstr "Výška (cm)"
 #: ../qml/Setting.qml:152
 msgid "Weight (kg)"
 msgstr "Hmotnost (kg)"
+
+#: ../qml/Main.qml:50
+msgid "%1 Steps walked today."
+msgstr "Dnes bylo změřeno %1 kroků"
+
+#: ../qml/Main.qml:51
+msgid "No hike measured today."
+msgstr "Dnes nebyly změřeny žádné kroky."

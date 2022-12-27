@@ -29,6 +29,8 @@ The device should be in the pocket for the best accuracy.
 
 [4] Clime, C. sensorsstatus. OpenStore. Retrieved March 18, 2022, from https://open-store.io/app/sensorsstatus.chrisclime.
 
+[5] Usage and implementing of the User Metrics (alias Circle Message): https://docs.ubports.com/en/latest/appdev/guides/user-metrics.html
+
 ## License
 Copyright (C) 2022  Javad Rahimipour Anaraki
 
