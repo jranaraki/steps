@@ -136,7 +136,7 @@ msgstr "Tagesziel (Schritte)"
 
 #: ../qml/Main.qml:50
 msgid "%1 Steps walked today."
-msgstr "%1 Schritte gelaufen."
+msgstr "Heute %1 Schritte gelaufen."
 
 #: ../qml/Main.qml:51
 msgid "No hike measured today."
