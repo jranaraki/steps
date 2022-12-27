@@ -19,6 +19,7 @@ import Ubuntu.Components 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.LocalStorage 2.0
 import QtSensors 5.2
+import UserMetrics 0.1
 
 import "../js/db.js" as StepsDB
 
@@ -122,8 +123,10 @@ Page {
 
     for (var i = 0; i < magNoG.length - 1; i++){
       if ((magNoG[i] - magNoG[i+1]) > (11 - (preferences.sensitivityValue + 7.0))) {
-        nSteps = nSteps + 1
+        nSteps = nSteps+1
         distance = Math.round(nSteps * preferences.strideValue) / 100
+        //Update the circle messae
+        metric.increment(1)
         tmpSteps = tmpSteps + 1
         listModel.setProperty(listIndex, "steps", nSteps)
         listModel.setProperty(listIndex, "distance", distance)

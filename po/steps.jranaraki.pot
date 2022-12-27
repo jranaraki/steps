@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: steps.jranaraki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-18 04:19+0000\n"
+"POT-Creation-Date: 2022-12-27 12:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/About.qml:24 ../qml/MainPage.qml:50
+#: ../qml/About.qml:24 ../qml/MainPage.qml:51
 msgid "About"
 msgstr ""
 
-#: ../qml/About.qml:48 ../qml/MainPage.qml:41 steps.desktop.in.h:1
+#: ../qml/About.qml:48 ../qml/MainPage.qml:42 steps.desktop.in.h:1
 msgid "Steps"
 msgstr ""
 
@@ -65,15 +65,25 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: ../qml/MainPage.qml:45 ../qml/Setting.qml:39
+#: ../qml/Main.qml:50
+msgid ""
+"%1 Steps walked today.\n"
+"Thats %1 meters."
+msgstr ""
+
+#: ../qml/Main.qml:51
+msgid "No hike measured today."
+msgstr ""
+
+#: ../qml/MainPage.qml:46 ../qml/Setting.qml:39
 msgid "Settings"
 msgstr ""
 
-#: ../qml/MainPage.qml:173
+#: ../qml/MainPage.qml:176
 msgid "Distance: %1 m"
 msgstr ""
 
-#: ../qml/MainPage.qml:173
+#: ../qml/MainPage.qml:176
 msgid "Steps: %1"
 msgstr ""
 
