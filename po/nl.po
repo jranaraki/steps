@@ -101,3 +101,11 @@ msgstr "Lengte (in cm)"
 #: ../qml/Setting.qml:141
 msgid "Weight (kg)"
 msgstr "Gewicht (in kg)"
+
+#: ../qml/Main.qml:50
+msgid "%1 Steps walked today."
+msgstr "Je hebt vandaag %1 stappen gelopen"
+
+#: ../qml/Main.qml:51
+msgid "No hike measured today."
+msgstr "Er zijn vandaag geen stappen gemeten"

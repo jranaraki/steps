@@ -130,3 +130,11 @@ msgstr "Sensitivité"
 #: ../qml/Setting.qml:250
 msgid "Goal (steps)"
 msgstr "Objectif (pas)"
+
+#: ../qml/Main.qml:50
+msgid "%1 Steps walked today."
+msgstr "Aujourd'hui, %1 pas ont été mesurés"
+
+#: ../qml/Main.qml:51
+msgid "No hike measured today."
+msgstr "Aucun pas n'a été mesuré aujourd'hui"

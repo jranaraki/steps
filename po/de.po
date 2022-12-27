@@ -134,5 +134,12 @@ msgstr "Empfindlichkeit"
 msgid "Goal (steps)"
 msgstr "Tagesziel (Schritte)"
 
+#: ../qml/Main.qml:50
+msgid "%1 Steps walked today."
+msgstr "%1 Schritte gelaufen."
+
+#: ../qml/Main.qml:51
+msgid "No hike measured today."
+msgstr "Heute wurden keine Schritte gemessen."
 #~ msgid "Other"
 #~ msgstr "Anderes"
