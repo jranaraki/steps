@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: steps.jranaraki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-18 04:19+0000\n"
+"POT-Creation-Date: 2023-10-12 19:41-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/About.qml:24 ../qml/MainPage.qml:50
+#: ../qml/About.qml:24 ../qml/MainPage.qml:51
 msgid "About"
 msgstr ""
 
-#: ../qml/About.qml:48 ../qml/MainPage.qml:41 steps.desktop.in.h:1
+#: ../qml/About.qml:48 ../qml/MainPage.qml:42 steps.desktop.in.h:1
 msgid "Steps"
 msgstr ""
 
@@ -65,58 +65,58 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: ../qml/MainPage.qml:45 ../qml/Setting.qml:39
+#: ../qml/MainPage.qml:46 ../qml/Setting.qml:40
 msgid "Settings"
 msgstr ""
 
-#: ../qml/MainPage.qml:173
+#: ../qml/MainPage.qml:174
 msgid "Distance: %1 m"
 msgstr ""
 
-#: ../qml/MainPage.qml:173
+#: ../qml/MainPage.qml:174
 msgid "Steps: %1"
 msgstr ""
 
-#: ../qml/Setting.qml:42
+#: ../qml/Setting.qml:43
 msgid "Cancel"
 msgstr ""
 
-#: ../qml/Setting.qml:51
+#: ../qml/Setting.qml:52
 msgid "Apply"
 msgstr ""
 
-#: ../qml/Setting.qml:87
+#: ../qml/Setting.qml:88
 msgid "Sex"
 msgstr ""
 
-#: ../qml/Setting.qml:103
+#: ../qml/Setting.qml:102
 msgid "Female"
 msgstr ""
 
-#: ../qml/Setting.qml:103 ../qml/Setting.qml:295
+#: ../qml/Setting.qml:102
 msgid "Male"
 msgstr ""
 
-#: ../qml/Setting.qml:124
+#: ../qml/Setting.qml:117
 msgid "Age"
 msgstr ""
 
-#: ../qml/Setting.qml:145
+#: ../qml/Setting.qml:140
 msgid "Height (cm)"
 msgstr ""
 
-#: ../qml/Setting.qml:167
+#: ../qml/Setting.qml:164
 msgid "Weight (kg)"
 msgstr ""
 
-#: ../qml/Setting.qml:188
+#: ../qml/Setting.qml:187
 msgid "Stride (cm)"
 msgstr ""
 
-#: ../qml/Setting.qml:209
+#: ../qml/Setting.qml:210
 msgid "Sensitivity"
 msgstr ""
 
-#: ../qml/Setting.qml:250
+#: ../qml/Setting.qml:253
 msgid "Goal (steps)"
 msgstr ""

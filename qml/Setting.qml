@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2022  Javad Rahimipour Anaraki
+* Copyright (C) 2023  Javad Rahimipour Anaraki
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,286 +16,266 @@
 
 import QtQuick 2.4
 import QtQuick.Controls 2.5 as QT
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import QtQuick.Window 2.2
+import QtQml 2.0
 
 Page {
-  id: settingPage
+    id: settingPage
 
-  property alias sex: sexValue.text
-  property alias age: ageText.text
-  property alias heightValue: heightText.text
-  property alias weightValue: weightText.text
-  property alias strideValue: strideText.text
-  property alias sensitivityValue: sensitivitySlider.value
-  property alias goalValue: goalText.text
-  property int mSpacing: units.gu(1)
+    property alias sex: sexComboBox.currentIndex
+    property alias age: ageText.text
+    property alias heightValue: heightText.text
+    property alias weightValue: weightText.text
+    property alias strideValue: strideText.text
+    property alias sensitivityValue: sensitivitySlider.value
+    property alias goalValue: goalText.text
+    property int mSpacing: units.gu(1)
 
-  signal applyChanges
-  signal cancelChanges
+    signal applyChanges
+    signal cancelChanges
 
-  header: PageHeader {
-    id: header
-    title: i18n.tr("Settings")
+    header: PageHeader {
+        id: header
+        title: i18n.tr("Settings")
 
-    leadingActionBar.actions: Action {
-      text: i18n.tr("Cancel")
-      iconName: "close"
-      onTriggered: {
-        settingPage.cancelChanges();
-        pageStack.pop();
-      }
-    }
-
-    trailingActionBar.actions: Action {
-      text: i18n.tr("Apply")
-      iconName: "ok"
-      onTriggered: {
-        settingPage.applyChanges();
-        pageStack.pop();
-      }
-    }
-  }
-
-  Flickable {
-    id: settingsFlickable
-    clip: true
-    flickableDirection: Flickable.AutoFlickIfNeeded
-
-    anchors {
-      top: header.bottom
-      left: parent.left
-      right: parent.right
-      bottom: parent.bottom
-    }
-
-    contentHeight: column.height
-
-    Column {
-      id: column
-      width: parent.width
-      anchors {
-        left: parent.left; leftMargin: mSpacing
-        right: parent.right; rightMargin: mSpacing
-      }
-
-      ListItem {
-        height: sexLabel.height + sexValue.height + 3 * mSpacing
-        divider.visible: false
-        Label {
-          id: sexLabel
-          text: i18n.tr("Sex")
-          width: parent.width
-          anchors {
-            top: parent.top; topMargin: mSpacing
-          }
-        }
-        ComboButton {
-          id: sexValue
-          expandedHeight: -1
-          width: parent.width
-          anchors {
-            top: sexLabel.bottom; topMargin: mSpacing
-          }
-
-          Column {
-            Repeater {
-              model: [i18n.tr("Male"), i18n.tr("Female")]
-              Button {
-                text: modelData
-                width: parent.width
-                onClicked: {
-                  sexValue.text = text;
-                  sexValue.expanded = false;
-                  calStride()
-                }
-              }
+        leadingActionBar.actions: Action {
+            text: i18n.tr("Cancel")
+            iconName: "close"
+            onTriggered: {
+                settingPage.cancelChanges();
+                pageStack.pop();
             }
-          }
         }
-      }
 
-      ListItem {
-        id: ageItem
-        height: agelabel.height + ageText.height + 3 * mSpacing
-        divider.visible: false
-        Label {
-          id: agelabel
-          text: i18n.tr("Age")
-          anchors {
-            top: parent.top; topMargin: mSpacing
-          }
+        trailingActionBar.actions: Action {
+            text: i18n.tr("Apply")
+            iconName: "ok"
+            onTriggered: {
+                settingPage.applyChanges();
+                pageStack.pop();
+            }
         }
-        TextField {
-          id:ageText
-          width: parent.width
-          anchors {
-            top: agelabel.bottom; topMargin: mSpacing
-          }
-          validator: IntValidator{bottom: 1;}
-        }
-      }
+    }
 
-      ListItem {
-        id: heightItem
-        height: heightlabel.height + heightText.height + 3 * mSpacing
-        divider.visible: false
-        Label {
-          id: heightlabel
-          text: i18n.tr("Height (cm)")
-          anchors {
-            top: parent.top; topMargin: mSpacing
-          }
-        }
-        TextField {
-          id: heightText
-          width: parent.width
-          anchors {
-            top: heightlabel.bottom; topMargin: mSpacing
-          }
-          validator: DoubleValidator{bottom: 1.00; decimals: 2;}
-          onTextChanged: calStride()
-        }
-      }
-
-      ListItem {
-        id: weightItem
-        height: weightlabel.height + weightText.height + 3 * mSpacing
-        divider.visible: false
-        Label {
-          id:weightlabel
-          text: i18n.tr("Weight (kg)")
-          anchors {
-            top: parent.top; topMargin: mSpacing
-          }
-        }
-        TextField {
-          id:weightText
-          width: parent.width
-          anchors {
-            top: weightlabel.bottom; topMargin: mSpacing
-          }
-          validator: DoubleValidator{bottom: 1.00; decimals: 2;}
-        }
-      }
-
-      ListItem {
-        id: strideItem
-        height: stridelabel.height + strideText.height + 3 * mSpacing
-        divider.visible: false
-        Label {
-          id: stridelabel
-          text: i18n.tr("Stride (cm)")
-          anchors {
-            top: parent.top; topMargin: mSpacing
-          }
-        }
-        TextField {
-          id: strideText
-          width: parent.width
-          anchors {
-            top: stridelabel.bottom; topMargin: mSpacing
-          }
-          onFocusChanged: waitForKeyboardTimer.start()
-        }
-      }
-
-      ListItem {
-        id: sensitivityItem
-        height: sensitivitylabel.height + sensitivitySlider.height + 3 * mSpacing
-        divider.visible: false
-        Label {
-          id: sensitivitylabel
-          text: i18n.tr("Sensitivity")
-          anchors {
-            top: parent.top; topMargin: mSpacing
-          }
-        }
-        Row {
-          anchors{
-            top: sensitivitylabel.bottom
-            topMargin: mSpacing
+    Flickable {
+        id: settingsFlickable
+        clip: true
+        flickableDirection: Flickable.AutoFlickIfNeeded
+        anchors {
+            top: header.bottom
             left: parent.left
-            leftMargin: mSpacing
             right: parent.right
-            rightMargin: mSpacing
-          }
-          QT.Slider {
-            id: sensitivitySlider
-            from: 0.0
-            to: 5.0
-            stepSize: 0.1
-            live: true
-            handle.height: units.gu(2)
-            handle.width: units.gu(2)
-            width: parent.width - valueLabel.width
-            anchors.verticalCenter: parent.verticalCenter
-          }
-          Label {
-            id: valueLabel
-            text: sensitivitySlider.value.toLocaleString(Qt.locale(), "f", 2)
-            width: units.gu(4)
-            horizontalAlignment: Text.AlignRight
-            anchors.bottom: sensitivitySlider.verticalCenter
-          }
+            bottom: parent.bottom
         }
-      }
+        contentHeight: column.height
 
-      ListItem {
-        id: goalItem
-        height: goallabel.height + goalText.height + 3 * mSpacing
-        divider.visible: false
-        Label {
-          id: goallabel
-          text: i18n.tr("Goal (steps)")
-          anchors {
-            top: parent.top; topMargin: mSpacing
-          }
-        }
-        TextField {
-          id: goalText
-          width: parent.width
-          anchors {
-            top: goallabel.bottom; topMargin: mSpacing
-          }
-          validator: IntValidator{bottom: 1;}
-          onFocusChanged: waitForKeyboardTimer.start()
-        }
-      }
+        Column {
+            id: column
+            width: parent.width
+            anchors {
+                left: parent.left; leftMargin: mSpacing
+                right: parent.right; rightMargin: mSpacing
+            }
 
-      Item {
-        id: flickableSizeSpacer
-        height: 0
-      }
+            ListItem {
+                id: sexItem
+                height: sexComboBox.height + 5 * mSpacing
+                divider.visible: false
 
-      Timer {
-        id: waitForKeyboardTimer
-        interval: 250
-        onTriggered: {
-          flickableSizeSpacer.height = settingPage.height
-          var landscapeOffset = Screen.orientation === 2 ? 250 : 0
-          var constOffset = settingsFlickable.contentY + Qt.inputMethod.keyboardRectangle.height + landscapeOffset
-          if (goalText.focus) {
-            var goalOffset = column.height - goalItem.y
-            settingsFlickable.contentY = constOffset - goalOffset
-          } else if (strideText.focus) {
-            var strideOffset = column.height - strideItem.y
-            settingsFlickable.contentY = constOffset - strideOffset
-          } else {
-            flickableSizeSpacer.height = 0
-            settingsFlickable.returnToBounds()
-          }
+                Label {
+                    id: sexLabel
+                    text: i18n.tr("Sex")
+                    width: parent.width
+                    anchors {
+                        top: parent.top; topMargin: mSpacing
+                    }
+                }
+
+                QT.ComboBox {
+                    id: sexComboBox
+                    anchors {
+                        top: sexLabel.bottom; topMargin: mSpacing
+                    }
+                    width: parent.width
+                    editable: false
+                    model: [i18n.tr("Female"), i18n.tr("Male")]
+                    onCurrentIndexChanged: {
+                        sexComboBox.currentIndex = sexComboBox.currentIndex
+                        calStride()
+                    }
+                }
+            }
+
+            ListItem {
+                id: ageItem
+                height: ageText.height + 5 * mSpacing
+                divider.visible: false
+
+                Label {
+                    id: ageLabel
+                    text: i18n.tr("Age")
+                    anchors {
+                        top: parent.top; topMargin: mSpacing
+                    }
+                }
+
+                TextField {
+                    id:ageText
+                    width: parent.width
+                    anchors {
+                        top: ageLabel.bottom; topMargin: mSpacing
+                    }
+                    validator: IntValidator{bottom: 1;}
+                }
+            }
+
+            ListItem {
+                id: heightItem
+                height: heightText.height + 5 * mSpacing
+                divider.visible: false
+
+                Label {
+                    id: heightLabel
+                    text: i18n.tr("Height (cm)")
+                    anchors {
+                        top: parent.top; topMargin: mSpacing
+                    }
+                }
+
+                TextField {
+                    id: heightText
+                    width: parent.width
+                    anchors {
+                        top: heightLabel.bottom; topMargin: mSpacing
+                    }
+                    validator: DoubleValidator{bottom: 1.00; decimals: 2;}
+                    onTextChanged: calStride()
+                }
+            }
+
+            ListItem {
+                id: weightItem
+                height: weightText.height + 5 * mSpacing
+                divider.visible: false
+
+                Label {
+                    id:weightLabel
+                    text: i18n.tr("Weight (kg)")
+                    anchors {
+                        top: parent.top; topMargin: mSpacing
+                    }
+                }
+
+                TextField {
+                    id:weightText
+                    width: parent.width
+                    anchors {
+                        top: weightLabel.bottom; topMargin: mSpacing
+                    }
+                    validator: DoubleValidator{bottom: 1.00; decimals: 2;}
+                }
+            }
+
+            ListItem {
+                id: strideItem
+                height: strideText.height + 5 * mSpacing
+                divider.visible: false
+
+                Label {
+                    id: strideLabel
+                    text: i18n.tr("Stride (cm)")
+                    anchors {
+                        top: parent.top; topMargin: mSpacing
+                    }
+                }
+
+                TextField {
+                    id: strideText
+                    width: parent.width
+                    anchors {
+                        top: strideLabel.bottom; topMargin: mSpacing
+                    }
+                    onFocusChanged: waitForKeyboardTimer.start()
+                }
+            }
+
+            ListItem {
+                id: sensitivityItem
+                height: sensitivitySlider.height + 4 * mSpacing
+                divider.visible: false
+
+                Label {
+                    id: sensitivityLabel
+                    text: i18n.tr("Sensitivity")
+                    anchors {
+                        top: parent.top; topMargin: mSpacing
+                    }
+                }
+
+                Row {
+                    anchors{
+                        top: sensitivityLabel.bottom
+                        topMargin: mSpacing
+                        left: parent.left
+                        leftMargin: mSpacing
+                        right: parent.right
+                        rightMargin: mSpacing
+                    }
+                    QT.Slider {
+                        id: sensitivitySlider
+                        from: 0.0
+                        to: 5.0
+                        stepSize: 0.1
+                        live: true
+                        handle.height: units.gu(2)
+                        handle.width: units.gu(2)
+                        width: parent.width - valueLabel.width
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                    Label {
+                        id: valueLabel
+                        text: sensitivitySlider.value.toLocaleString(Qt.locale(), "f", 2)
+                        width: units.gu(4)
+                        horizontalAlignment: Text.AlignRight
+                        anchors.bottom: sensitivitySlider.verticalCenter
+                    }
+                }
+            }
+
+            ListItem {
+                id: goalItem
+                height: goalText.height + 5 * mSpacing
+                divider.visible: false
+
+                Label {
+                    id: goalLabel
+                    text: i18n.tr("Goal (steps)")
+                    anchors {
+                        top: parent.top; topMargin: mSpacing
+                    }
+                }
+
+                TextField {
+                    id: goalText
+                    width: parent.width
+                    anchors {
+                        top: goalLabel.bottom; topMargin: mSpacing
+                    }
+                    validator: IntValidator{bottom: 1;}
+                    onFocusChanged: waitForKeyboardTimer.start()
+                }
+            }
         }
-      }
     }
-  }
 
-  //Calculate stride in cm based on demoraphic information
-  function calStride() {
-    if (sexValue.text == i18n.tr("Male")) {
-      strideText.text = Math.round(heightText.text * 0.3937008 * 0.415 * 100) / 100
-    } else {
-      strideText.text = Math.round(heightText.text * 0.3937008 * 0.413 * 100) / 100
+    //Calculate stride in cm based on demoraphic information
+    function calStride() {
+        if (sexComboBox.currentIndex === 1) {
+            strideText.text = Math.round(heightText.text * 0.3937008 * 0.415 * 100) / 100
+        } else {
+            strideText.text = Math.round(heightText.text * 0.3937008 * 0.413 * 100) / 100
+        }
     }
-  }
 }
+

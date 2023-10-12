@@ -1,5 +1,5 @@
 {
-  "clickable_minimum_required": "7.1.2",
-  "builder": "pure-qml-cmake",
-  "kill": "qmlscene"
+  "clickable_minimum_required": "7",
+  "framework": "ubuntu-sdk-20.04",
+  "builder": "pure-qml-cmake"
 }
