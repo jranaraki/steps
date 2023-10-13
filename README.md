@@ -30,7 +30,7 @@ The device should be in the pocket for the best accuracy.
 [4] Clime, C. sensorsstatus. OpenStore. Retrieved March 18, 2022, from https://open-store.io/app/sensorsstatus.chrisclime.
 
 ## License
-Copyright (C) 2022  Javad Rahimipour Anaraki
+Copyright (C) 2023  Javad Rahimipour Anaraki
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License version 3, as published
 by the Free Software Foundation.
