@@ -263,7 +263,7 @@ Page {
                         top: goalLabel.bottom; topMargin: mSpacing
                     }
                     validator: IntValidator{bottom: 1;}
-                    onFocusChanged: waitForKeyboardTimer.start()
+                    focus: true
                 }
             }
         }
@@ -278,4 +278,3 @@ Page {
         }
     }
 }
-
