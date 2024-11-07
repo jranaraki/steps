@@ -65,15 +65,23 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: ../qml/MainPage.qml:46 ../qml/Setting.qml:40
+#: ../qml/Main.qml:50
+msgid "%1 Steps walked today."
+msgstr ""
+
+#: ../qml/Main.qml:51
+msgid "No hike measured today."
+msgstr ""
+
+#: ../qml/MainPage.qml:46 ../qml/Setting.qml:39
 msgid "Settings"
 msgstr ""
 
-#: ../qml/MainPage.qml:174
+#: ../qml/MainPage.qml:176
 msgid "Distance: %1 m"
 msgstr ""
 
-#: ../qml/MainPage.qml:174
+#: ../qml/MainPage.qml:176
 msgid "Steps: %1"
 msgstr ""
 

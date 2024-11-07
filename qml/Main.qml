@@ -17,6 +17,7 @@
 import QtQuick 2.7
 import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
+import UserMetrics 0.1
 
 MainView {
   id: mainView
@@ -42,7 +43,14 @@ MainView {
     property int goalValue: 10000
     property int commonMargin: units.gu(2)
   }
-
+  Metric { // Define the Metric object.
+    property string circleMetric
+    id: metric // A name to reference the metric elsewhere in the code. i.e. when updating format values below.
+    name: "stepsMetric" // This is a unique ID for storing the user metric data
+    format: i18n.tr("%1 Steps walked today.") // This is the metric/message that will display "today". Again it uses the string variable that we defined above
+    emptyFormat: i18n.tr("No hike measured today.") // This is the metric/message for tomorrow. It will "activate" once the day roles over and replaces "format". Here I have use a simple translatable string instead of a variable because I didn’t need it to change.
+    domain: "steps.jranaraki" // This is the appname, based on what you have in your app settings. Presumably this is how the system lists/ranks the metrics to show on the lock screen.
+  }
   PageStack {
     id: pStack
   }
