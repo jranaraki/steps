@@ -32,7 +32,7 @@ The device should be in the pocket for the best accuracy.
 [5] Usage and implementing of the User Metrics (alias Circle Message): https://docs.ubports.com/en/latest/appdev/guides/user-metrics.html
 
 ## License
-Copyright (C) 2022  Javad Rahimipour Anaraki
+Copyright (C) 2023  Javad Rahimipour Anaraki
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License version 3, as published
 by the Free Software Foundation.

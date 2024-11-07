@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2022  Javad Rahimipour Anaraki
+* Copyright (C) 2023  Javad Rahimipour Anaraki
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 */
 
 import QtQuick 2.4
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 
 Page {
   id: aboutPage
@@ -49,7 +49,7 @@ Page {
         fontSize: "x-large"
       }
 
-      UbuntuShape {
+      LomiriShape {
         width: units.gu(12); height: units.gu(12)
         anchors.horizontalCenter: parent.horizontalCenter
         radius: "medium"
@@ -60,7 +60,7 @@ Page {
 
       Label {
         width: parent.width
-        linkColor: UbuntuColors.orange
+        linkColor: LomiriColors.orange
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         text: i18n.tr("Version %1").arg(Qt.application.version)
@@ -68,7 +68,7 @@ Page {
 
       Label {
         width: parent.width
-        linkColor: UbuntuColors.orange
+        linkColor: LomiriColors.orange
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         text: i18n.tr("This application counts your steps based on accelerometer data and calculates travelled distance based on computed stride length using the user's demographic information.")
@@ -76,7 +76,7 @@ Page {
 
       Label {
         width: parent.width
-        linkColor: UbuntuColors.orange
+        linkColor: LomiriColors.orange
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         //TRANSLATORS: Please make sure the URLs are correct
@@ -86,7 +86,7 @@ Page {
 
       Label {
         width: parent.width
-        linkColor: UbuntuColors.orange
+        linkColor: LomiriColors.orange
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         text: "<a href='https://github.com/jranaraki/steps/'>" + i18n.tr("SOURCE") + "</a> | <a href='https://github.com/jranaraki/steps/issues'>" + i18n.tr("ISSUES") + "</a> | <a href='https://paypal.me/jranaraki'>" + i18n.tr("DONATE") + "</a>"
@@ -95,11 +95,11 @@ Page {
 
       Label {
         width: parent.width
-        linkColor: UbuntuColors.orange
+        linkColor: LomiriColors.orange
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         style: Font.Bold
-        text: i18n.tr("Copyright") + " (c) 2022 Javad Rahimipour Anaraki <jrahimipour@pm.me>"
+        text: i18n.tr("Copyright") + " (c) 2023 Javad Rahimipour Anaraki <jrahimipour@pm.me>"
       }
     }
   }

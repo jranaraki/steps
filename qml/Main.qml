@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2022  Javad Rahimipour Anaraki
+* Copyright (C) 2023  Javad Rahimipour Anaraki
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 */
 
 import QtQuick 2.7
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
 import UserMetrics 0.1
 
@@ -34,7 +34,7 @@ MainView {
 
   Settings {
     id: preferences
-    property string sex: "Male"
+    property int sex: 0
     property int age: 30
     property double heightValue: 160.0
     property double weightValue: 75.0

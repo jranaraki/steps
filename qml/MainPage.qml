@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2022  Javad Rahimipour Anaraki
+* Copyright (C) 2023  Javad Rahimipour Anaraki
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 */
 
 import QtQuick 2.4
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.LocalStorage 2.0
 import QtSensors 5.2
@@ -27,15 +27,15 @@ Page {
   id: mainPage
   anchors.fill: parent
 
-  property var nSteps: 0
-  property var distance: 0
-  property var freq: 60
+  property int nSteps: 0
+  property real distance: 0
+  property int freq: 60
   property var magTemp: []
   property var magData: []
   property var line: []
-  property var listIndex: 0
-  property var today: ""
-  property var pace: 0.0
+  property int listIndex: 0
+  property string today: ""
+  property real pace: 0.0
 
   header: PageHeader {
     id: header
@@ -117,8 +117,8 @@ Page {
     }
 
     meanMag = mean(magData)
-    for (var i = 0; i < freq; i++){
-      magNoG.push(magData[i] - meanMag)
+    for (var j = 0; j < freq; j++){
+      magNoG.push(magData[j] - meanMag)
     }
 
     for (var i = 0; i < magNoG.length - 1; i++){
@@ -170,7 +170,7 @@ Page {
           SlotsLayout.position: SlotsLayout.Leading
           source: Image { source: "../Images/walk.svg" }
           height: del.height-units.gu(2)
-          aspect: UbuntuShape.DropShadow
+          aspect: LomiriShape.DropShadow
         }
         title.text: date
         subtitle.text: i18n.tr("Steps: %1").arg(steps.toLocaleString(Qt.locale(),"f",0)) + ", " + i18n.tr("Distance: %1 m").arg(distance.toLocaleString(Qt.locale(),"f",1))
@@ -179,7 +179,7 @@ Page {
           SlotsLayout.position: SlotsLayout.Trailing
           source: Image { source: "../Images/trophy.svg" }
           height: del.height-units.gu(2)
-          aspect: UbuntuShape.DropShadow
+          aspect: LomiriShape.DropShadow
           visible: steps >= preferences.goalValue ? true : false
         }
       }
